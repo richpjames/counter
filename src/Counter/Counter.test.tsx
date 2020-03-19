@@ -8,7 +8,7 @@ test("renders the number 0", () => {
   getByText("0");
 });
 test("renders a '+' and '-' button", () => {
-  const { getByText, getAllByLabelText } = render(<Counter />);
-  const incrementButton = getByText("increment");
-  const minusButton = getByText("descrement");
+  const { getByText } = render(<Counter />);
+  const incrementButton = getByText("+");
+  const minusButton = getByText("-");
 });
