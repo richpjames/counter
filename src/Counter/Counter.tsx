@@ -31,7 +31,7 @@ function Counter() {
       <Button
         textToDisplay="-"
         label="decrement"
-        onClick={() => count > 0 && setCount(prevCount => prevCount - 1)}
+        onClick={() => decrementCount(1)}
       />
       <Button
         textToDisplay="-3"
