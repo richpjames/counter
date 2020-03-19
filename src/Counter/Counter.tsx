@@ -4,7 +4,8 @@ import Button from "./Button";
 function Counter() {
   return (
     <section>
-      0<Button textToDisplay="+" label="increment" />
+      <h2 title="counter">0</h2>
+      <Button textToDisplay="+" label="increment" />
       <Button textToDisplay="-" label="decrement" />
     </section>
   );
