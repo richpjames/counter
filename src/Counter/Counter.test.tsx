@@ -110,3 +110,15 @@ test("When pressing the +3 button if the action is going to make the number go a
   }
   expect(counter).toHaveTextContent("10");
 });
+
+test("  When pressing the -3 button if the action is going to make the number go below 0, it should display 0", () => {
+  const { getByText, getByTitle } = render(<Counter />);
+
+  const counter = getByTitle("counter");
+  const decrementBy3Button = getByText("-3");
+  const incrementButton = getByText("+");
+
+  fireEvent.click(incrementButton);
+  fireEvent.click(decrementBy3Button);
+  expect(counter).toHaveTextContent("0");
+});
