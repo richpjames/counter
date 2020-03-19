@@ -7,6 +7,7 @@ function Counter() {
   return (
     <section>
       <h2 title="counter">{count}</h2>
+      <Button textToDisplay="+3" label="increment by 3" />
       <Button
         textToDisplay="+"
         label="increment"
@@ -17,6 +18,7 @@ function Counter() {
         label="decrement"
         onClick={() => count > 0 && setCount(prevCount => prevCount - 1)}
       />
+      <Button textToDisplay="-3" label="decrement by 3" />
     </section>
   );
 }
