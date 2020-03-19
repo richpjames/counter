@@ -3,7 +3,7 @@ import React from "react";
 interface IProps {
   textToDisplay: string;
   label: string;
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 const Button = (props: IProps) => {
