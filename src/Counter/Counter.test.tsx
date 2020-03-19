@@ -1,7 +1,9 @@
 import { render, fireEvent } from "@testing-library/react";
 import React from "react";
-import Counter from "./Counter";
 import "@testing-library/jest-dom/extend-expect";
+import userEvent from "@testing-library/user-event";
+
+import Counter from "./Counter";
 
 const setup = () => {
   const utils = render(<Counter />);
@@ -27,7 +29,7 @@ test("renders the number 0", () => {
 });
 
 test("renders a '+' and '-' button", () => {
-  const { getByText, incrementButton, decerementButton } = setup();
+  const { incrementButton, decerementButton } = setup();
 
   expect(incrementButton).toBeInTheDocument();
   expect(decerementButton).toBeInTheDocument();
@@ -111,13 +113,12 @@ test("When pressing the -3 button if the action is going to make the number go b
   expect(counter).toHaveTextContent("0");
 });
 
-// test("the upper bound is configurable by the user", () => {
-//   const { getByText, getByTitle, getByLabelText } = setup();
+test("the upper bound is configurable by the user", () => {
+  const { counter, getByLabelText, incrementBy3Button } = setup();
 
-//   const counter = getByTitle("counter");
-//   const counterLimit = getByLabelText("counter limit");
-//   const incrementBy3Button = getByText("+3");
+  const counterLimit = getByLabelText("Counter Limit");
 
-//   fireEvent.click(decrementBy3Button);
-//   expect(counter).toHaveTextContent("0");
-// });
+  userEvent.type(counterLimit, "1");
+  fireEvent.click(incrementBy3Button);
+  expect(counter).toHaveTextContent("1");
+});
