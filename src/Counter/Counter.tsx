@@ -42,6 +42,8 @@ function Counter() {
         label="decrement by 3"
         onClick={() => decrementCount(3)}
       />
+      <label htmlFor="counter-limit">Counter Limit</label>
+      <input type="number" id="counter-limit" />
     </section>
   );
 }
