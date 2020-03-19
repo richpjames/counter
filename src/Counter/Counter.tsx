@@ -10,7 +10,7 @@ function Counter() {
       <Button
         textToDisplay="+"
         label="increment"
-        onClick={() => setCount(prevCount => prevCount + 1)}
+        onClick={() => count < 10 && setCount(prevCount => prevCount + 1)}
       />
       <Button
         textToDisplay="-"
