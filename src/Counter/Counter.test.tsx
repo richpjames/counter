@@ -84,3 +84,16 @@ test("+3 should increment the count by 3", () => {
   fireEvent.click(incrementBy3Button);
   expect(counter).toHaveTextContent("3");
 });
+
+test("-3 should decrement the count by 3", () => {
+  const { getByText, getByTitle } = render(<Counter />);
+
+  const counter = getByTitle("counter");
+  const decrementBy3Button = getByText("-3");
+  const incrementBy3Button = getByText("+3");
+
+  fireEvent.click(incrementBy3Button);
+  expect(counter).toHaveTextContent("3");
+  fireEvent.click(decrementBy3Button);
+  expect(counter).toHaveTextContent("0");
+});
