@@ -26,3 +26,14 @@ test("pressing the + button increments the counter by 1", () => {
   fireEvent.click(incrementButton);
   expect(counter).toHaveTextContent("1");
 });
+
+test("pressing the - button decrements the counter by 1", () => {
+  const { getByText, getByTitle } = render(<Counter />);
+
+  const counter = getByTitle("counter");
+  const decerementButton = getByText("-");
+
+  expect(counter).toHaveTextContent("0");
+  fireEvent.click(decerementButton);
+  expect(counter).toHaveTextContent("-1");
+});
