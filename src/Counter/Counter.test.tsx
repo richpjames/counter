@@ -73,3 +73,14 @@ test("renders a '+3' and '-3' button", () => {
   expect(incrementBy3Button).toBeInTheDocument();
   expect(decerementBy3Button).toBeInTheDocument();
 });
+
+test("+3 should increment the count by 3", () => {
+  const { getByText, getByTitle } = render(<Counter />);
+
+  const counter = getByTitle("counter");
+  const incrementBy3Button = getByText("+3");
+
+  expect(counter).toHaveTextContent("0");
+  fireEvent.click(incrementBy3Button);
+  expect(counter).toHaveTextContent("3");
+});
