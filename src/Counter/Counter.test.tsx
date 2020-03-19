@@ -48,7 +48,7 @@ test("the counter can't be incremented to more than 10", () => {
   const incrementButton = getByText("+");
 
   expect(counter).toHaveTextContent("0");
-  for (let i = 0; i < 11; i++) {
+  for (var i = 0; i < 11; i++) {
     fireEvent.click(incrementButton);
   }
   expect(counter).toHaveTextContent("10");
@@ -96,4 +96,17 @@ test("-3 should decrement the count by 3", () => {
   expect(counter).toHaveTextContent("3");
   fireEvent.click(decrementBy3Button);
   expect(counter).toHaveTextContent("0");
+});
+
+test("When pressing the +3 button if the action is going to make the number go above 10, it should display 10 ", () => {
+  const { getByText, getByTitle } = render(<Counter />);
+
+  const counter = getByTitle("counter");
+  const incrementBy3Button = getByText("+3");
+
+  expect(counter).toHaveTextContent("0");
+  for (var i = 0; i < 4; i++) {
+    fireEvent.click(incrementBy3Button);
+  }
+  expect(counter).toHaveTextContent("10");
 });
