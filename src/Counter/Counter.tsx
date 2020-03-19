@@ -10,6 +10,11 @@ function Counter() {
     }
   };
 
+  const decrementCount = (amountToDecrement: number) => {
+    if (count > 0) {
+      setCount(prevCount => prevCount - amountToDecrement);
+    }
+  };
   return (
     <section>
       <h2 title="counter">{count}</h2>
@@ -28,7 +33,11 @@ function Counter() {
         label="decrement"
         onClick={() => count > 0 && setCount(prevCount => prevCount - 1)}
       />
-      <Button textToDisplay="-3" label="decrement by 3" />
+      <Button
+        textToDisplay="-3"
+        label="decrement by 3"
+        onClick={() => decrementCount(3)}
+      />
     </section>
   );
 }
