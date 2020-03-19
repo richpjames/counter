@@ -64,3 +64,12 @@ test("the counter can't be decremented to less than 0", () => {
   fireEvent.click(decerementButton);
   expect(counter).toHaveTextContent("0");
 });
+
+test("renders a '+3' and '-3' button", () => {
+  const { getByText } = render(<Counter />);
+
+  const incrementBy3Button = getByText("+3");
+  const decerementBy3Button = getByText("-3");
+  expect(incrementBy3Button).toBeInTheDocument();
+  expect(decerementBy3Button).toBeInTheDocument();
+});
