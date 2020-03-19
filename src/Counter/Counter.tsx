@@ -13,8 +13,10 @@ function Counter() {
   };
 
   const decrementCount = (amountToDecrement: number) => {
-    if (count > 0) {
+    if (count - amountToDecrement >= 0) {
       setCount(prevCount => prevCount - amountToDecrement);
+    } else if (count - amountToDecrement < 0) {
+      setCount(() => 0);
     }
   };
   return (
