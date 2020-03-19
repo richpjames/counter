@@ -5,8 +5,10 @@ function Counter() {
   const [count, setCount] = useState(0);
 
   const incrementCount = (amountToIncrement: number) => {
-    if (count < 10) {
+    if (count + amountToIncrement <= 10) {
       setCount(prevCount => prevCount + amountToIncrement);
+    } else if (count + amountToIncrement > 10) {
+      setCount(() => 10);
     }
   };
 
