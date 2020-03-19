@@ -3,24 +3,38 @@ import React from "react";
 import Counter from "./Counter";
 import "@testing-library/jest-dom/extend-expect";
 
+const setup = () => {
+  const utils = render(<Counter />);
+  const incrementButton = utils.getByText("+");
+  const decerementButton = utils.getByText("-");
+  const incrementBy3Button = utils.getByText("+3");
+  const decrementBy3Button = utils.getByText("-3");
+  const counter = utils.getByTitle("counter");
+
+  return {
+    counter,
+    incrementButton,
+    decerementButton,
+    incrementBy3Button,
+    decrementBy3Button,
+    ...utils
+  };
+};
+
 test("renders the number 0", () => {
-  const { getByText } = render(<Counter />);
+  const { getByText } = setup();
   getByText("0");
 });
-test("renders a '+' and '-' button", () => {
-  const { getByText } = render(<Counter />);
 
-  const incrementButton = getByText("+");
-  const decerementButton = getByText("-");
+test("renders a '+' and '-' button", () => {
+  const { getByText, incrementButton, decerementButton } = setup();
+
   expect(incrementButton).toBeInTheDocument();
   expect(decerementButton).toBeInTheDocument();
 });
 
 test("pressing the + button increments the counter by 1", () => {
-  const { getByText, getByTitle } = render(<Counter />);
-
-  const counter = getByTitle("counter");
-  const incrementButton = getByText("+");
+  const { incrementButton, counter } = setup();
 
   expect(counter).toHaveTextContent("0");
   fireEvent.click(incrementButton);
@@ -28,11 +42,7 @@ test("pressing the + button increments the counter by 1", () => {
 });
 
 test("pressing the - button decrements the counter by 1", () => {
-  const { getByText, getByTitle } = render(<Counter />);
-
-  const counter = getByTitle("counter");
-  const decerementButton = getByText("-");
-  const incrementButton = getByText("+");
+  const { incrementButton, decerementButton, counter } = setup();
 
   //the counter needs to be incremented first as it shouldn't decrement below zero
   fireEvent.click(incrementButton);
@@ -42,10 +52,7 @@ test("pressing the - button decrements the counter by 1", () => {
 });
 
 test("the counter can't be incremented to more than 10", () => {
-  const { getByText, getByTitle } = render(<Counter />);
-
-  const counter = getByTitle("counter");
-  const incrementButton = getByText("+");
+  const { counter, incrementButton } = setup();
 
   expect(counter).toHaveTextContent("0");
   for (var i = 0; i < 11; i++) {
@@ -55,10 +62,7 @@ test("the counter can't be incremented to more than 10", () => {
 });
 
 test("the counter can't be decremented to less than 0", () => {
-  const { getByText, getByTitle } = render(<Counter />);
-
-  const counter = getByTitle("counter");
-  const decerementButton = getByText("-");
+  const { counter, decerementButton } = setup();
 
   expect(counter).toHaveTextContent("0");
   fireEvent.click(decerementButton);
@@ -66,19 +70,14 @@ test("the counter can't be decremented to less than 0", () => {
 });
 
 test("renders a '+3' and '-3' button", () => {
-  const { getByText } = render(<Counter />);
+  const { incrementBy3Button, decrementBy3Button } = setup();
 
-  const incrementBy3Button = getByText("+3");
-  const decerementBy3Button = getByText("-3");
   expect(incrementBy3Button).toBeInTheDocument();
-  expect(decerementBy3Button).toBeInTheDocument();
+  expect(decrementBy3Button).toBeInTheDocument();
 });
 
 test("+3 should increment the count by 3", () => {
-  const { getByText, getByTitle } = render(<Counter />);
-
-  const counter = getByTitle("counter");
-  const incrementBy3Button = getByText("+3");
+  const { counter, incrementBy3Button } = setup();
 
   expect(counter).toHaveTextContent("0");
   fireEvent.click(incrementBy3Button);
@@ -86,11 +85,7 @@ test("+3 should increment the count by 3", () => {
 });
 
 test("-3 should decrement the count by 3", () => {
-  const { getByText, getByTitle } = render(<Counter />);
-
-  const counter = getByTitle("counter");
-  const decrementBy3Button = getByText("-3");
-  const incrementBy3Button = getByText("+3");
+  const { counter, incrementBy3Button, decrementBy3Button } = setup();
 
   fireEvent.click(incrementBy3Button);
   expect(counter).toHaveTextContent("3");
@@ -99,10 +94,7 @@ test("-3 should decrement the count by 3", () => {
 });
 
 test("When pressing the +3 button if the action is going to make the number go above 10, it should display 10 ", () => {
-  const { getByText, getByTitle } = render(<Counter />);
-
-  const counter = getByTitle("counter");
-  const incrementBy3Button = getByText("+3");
+  const { counter, incrementBy3Button } = setup();
 
   expect(counter).toHaveTextContent("0");
   for (var i = 0; i < 4; i++) {
@@ -112,13 +104,20 @@ test("When pressing the +3 button if the action is going to make the number go a
 });
 
 test("When pressing the -3 button if the action is going to make the number go below 0, it should display 0", () => {
-  const { getByText, getByTitle } = render(<Counter />);
-
-  const counter = getByTitle("counter");
-  const decrementBy3Button = getByText("-3");
-  const incrementButton = getByText("+");
+  const { counter, decrementBy3Button, incrementButton } = setup();
 
   fireEvent.click(incrementButton);
   fireEvent.click(decrementBy3Button);
   expect(counter).toHaveTextContent("0");
 });
+
+// test("the upper bound is configurable by the user", () => {
+//   const { getByText, getByTitle, getByLabelText } = setup();
+
+//   const counter = getByTitle("counter");
+//   const counterLimit = getByLabelText("counter limit");
+//   const incrementBy3Button = getByText("+3");
+
+//   fireEvent.click(decrementBy3Button);
+//   expect(counter).toHaveTextContent("0");
+// });
