@@ -12,7 +12,11 @@ function Counter() {
         label="increment"
         onClick={() => setCount(prevCount => prevCount + 1)}
       />
-      <Button textToDisplay="-" label="decrement" />
+      <Button
+        textToDisplay="-"
+        label="decrement"
+        onClick={() => setCount(prevCount => prevCount - 1)}
+      />
     </section>
   );
 }
