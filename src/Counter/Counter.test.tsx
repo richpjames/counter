@@ -37,3 +37,16 @@ test("pressing the - button decrements the counter by 1", () => {
   fireEvent.click(decerementButton);
   expect(counter).toHaveTextContent("-1");
 });
+
+test("the counter can't be incremented to more than 10", () => {
+  const { getByText, getByTitle } = render(<Counter />);
+
+  const counter = getByTitle("counter");
+  const incrementButton = getByText("+");
+
+  expect(counter).toHaveTextContent("0");
+  for (let i = 0; i < 11; i++) {
+    fireEvent.click(incrementButton);
+  }
+  expect(counter).toHaveTextContent("10");
+});
