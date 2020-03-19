@@ -3,12 +3,13 @@ import Button from "./Button";
 
 function Counter() {
   const [count, setCount] = useState(0);
+  const [upperBound, setUpperBound] = useState(10);
 
   const incrementCount = (amountToIncrement: number) => {
-    if (count + amountToIncrement <= 10) {
+    if (count + amountToIncrement <= upperBound) {
       setCount(prevCount => prevCount + amountToIncrement);
-    } else if (count + amountToIncrement > 10) {
-      setCount(() => 10);
+    } else if (count + amountToIncrement > upperBound) {
+      setCount(() => upperBound);
     }
   };
 
@@ -43,7 +44,11 @@ function Counter() {
         onClick={() => decrementCount(3)}
       />
       <label htmlFor="counter-limit">Counter Limit</label>
-      <input type="number" id="counter-limit" />
+      <input
+        type="number"
+        id="counter-limit"
+        onChange={({ target }) => setUpperBound(+target.value)}
+      />
     </section>
   );
 }
