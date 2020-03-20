@@ -116,7 +116,7 @@ test("When pressing the -3 button if the action is going to make the number go b
 test("the upper bound is configurable by the user", () => {
   const { counter, getByLabelText, incrementBy3Button } = setup();
 
-  const counterLimit = getByLabelText("Counter Limit");
+  const counterLimit = getByLabelText("Counter Limit:");
 
   userEvent.type(counterLimit, "1");
   fireEvent.click(incrementBy3Button);
