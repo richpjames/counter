@@ -5,7 +5,7 @@ import styled from "styled-components/macro";
 const AppContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+  height: 100vh;
 `;
 
 function App() {
