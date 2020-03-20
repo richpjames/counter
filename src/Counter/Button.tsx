@@ -8,13 +8,13 @@ interface IProps {
 }
 
 const ButtonWrap = styled.button`
-  background-color: #fffff0;
   border-radius: 8px;
   margin-left: 4px;
   margin-right: 4px;
   height: 75px;
   width: 75px;
   font-size: 30px;
+  color: #6fa912;
   :first-child {
     margin-left: 0px;
   }
