@@ -24,7 +24,20 @@ test("on click should be called when the button is clicked", () => {
       Button Test
     </Button>
   );
+  const button = getByLabelText("button");
   expect(mockFunc).not.toHaveBeenCalled();
-  userEvent.click(getByLabelText("button"));
+  userEvent.click(button);
   expect(mockFunc).toHaveBeenCalled();
+});
+test("button is disabled when boolean is set to true", () => {
+  const mockFunc = jest.fn();
+
+  const { getByLabelText } = render(
+    <Button label="button" onClick={mockFunc} disabled={true}>
+      Button Test
+    </Button>
+  );
+  const button = getByLabelText("button");
+
+  expect(button).toBeDisabled();
 });
