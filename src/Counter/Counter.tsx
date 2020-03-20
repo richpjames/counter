@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-import Button from "./Button";
-import {
-  CounterContainer,
-  ButtonsContainer,
-  Count,
-  Title
-} from "./Counter-styles";
+import ButtonsContainer from "./ButtonsContainer";
+import { CounterContainer, Count, Title } from "./Counter-styles";
 import UpperBound from "./UpperBound";
 
 function Counter() {
@@ -33,36 +28,12 @@ function Counter() {
     <CounterContainer>
       <Title>Counter</Title>
       <Count title="counter">{count}</Count>
-      <ButtonsContainer>
-        <Button
-          label="decrement by 3"
-          onClick={() => decrementCount(3)}
-          disabled={countBottomBound}
-        >
-          -3
-        </Button>
-        <Button
-          label="decrement"
-          onClick={() => decrementCount(1)}
-          disabled={countBottomBound}
-        >
-          -
-        </Button>
-        <Button
-          label="increment"
-          onClick={() => incrementCount(1)}
-          disabled={countUpperBound}
-        >
-          +
-        </Button>
-        <Button
-          label="increment by 3"
-          onClick={() => incrementCount(3)}
-          disabled={countUpperBound}
-        >
-          +3
-        </Button>
-      </ButtonsContainer>
+      <ButtonsContainer
+        incrementCount={incrementCount}
+        decrementCount={decrementCount}
+        countBottomBound={countBottomBound}
+        countUpperBound={countUpperBound}
+      />
       <UpperBound upperBound={upperBound} setUpperBound={setUpperBound} />
     </CounterContainer>
   );
