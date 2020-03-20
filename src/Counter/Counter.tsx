@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import { CounterContainer, ButtonsContainer } from "./Counter-styles";
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -21,35 +22,37 @@ function Counter() {
     }
   };
   return (
-    <section>
+    <CounterContainer>
       <h2 title="counter">{count}</h2>
-      <Button
-        textToDisplay="+3"
-        label="increment by 3"
-        onClick={() => incrementCount(3)}
-      />
-      <Button
-        textToDisplay="+"
-        label="increment"
-        onClick={() => incrementCount(1)}
-      />
-      <Button
-        textToDisplay="-"
-        label="decrement"
-        onClick={() => decrementCount(1)}
-      />
-      <Button
-        textToDisplay="-3"
-        label="decrement by 3"
-        onClick={() => decrementCount(3)}
-      />
+      <ButtonsContainer>
+        <Button
+          textToDisplay="+3"
+          label="increment by 3"
+          onClick={() => incrementCount(3)}
+        />
+        <Button
+          textToDisplay="+"
+          label="increment"
+          onClick={() => incrementCount(1)}
+        />
+        <Button
+          textToDisplay="-"
+          label="decrement"
+          onClick={() => decrementCount(1)}
+        />
+        <Button
+          textToDisplay="-3"
+          label="decrement by 3"
+          onClick={() => decrementCount(3)}
+        />
+      </ButtonsContainer>
       <label htmlFor="counter-limit">Counter Limit</label>
       <input
         type="number"
         id="counter-limit"
         onChange={({ target }) => setUpperBound(+target.value)}
       />
-    </section>
+    </CounterContainer>
   );
 }
 
