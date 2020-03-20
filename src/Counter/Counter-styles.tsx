@@ -5,6 +5,7 @@ export const CounterContainer = styled.section`
   flex-direction: column;
   align-items: center;
   width: 50%;
+  color: #ffffff;
 `;
 
 export const ButtonsContainer = styled.section`
