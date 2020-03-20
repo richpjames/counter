@@ -1,6 +1,10 @@
 A counter made as demo using TDD, Jest, React Testing Library, Styled Components.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Firstly run:
+
+### `yarn install`
+
+to install the relevant packages, the following scripts will then be available:
 
 ## Available Scripts
 
