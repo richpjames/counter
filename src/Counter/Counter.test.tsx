@@ -120,5 +120,7 @@ test("the upper bound is configurable by the user", () => {
 
   userEvent.type(counterLimit, "1");
   fireEvent.click(incrementBy3Button);
+  fireEvent.click(incrementBy3Button);
+
   expect(counter).toHaveTextContent("1");
 });
