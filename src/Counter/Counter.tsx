@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Button from "./Button";
-import { CounterContainer, ButtonsContainer } from "./Counter-styles";
+import {
+  CounterContainer,
+  ButtonsContainer,
+  UpperBoundInput
+} from "./Counter-styles";
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -23,6 +27,7 @@ function Counter() {
   };
   return (
     <CounterContainer>
+      <h1>Counter</h1>
       <h2 title="counter">{count}</h2>
       <ButtonsContainer>
         <Button
@@ -47,7 +52,7 @@ function Counter() {
         />
       </ButtonsContainer>
       <label htmlFor="counter-limit">Counter Limit</label>
-      <input
+      <UpperBoundInput
         type="number"
         id="counter-limit"
         value={upperBound}
