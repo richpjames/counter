@@ -1,12 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-interface IProps {
-  textToDisplay: string;
-  label: string;
-  onClick?: () => void;
-}
-
 const ButtonWrap = styled.button`
   border-radius: 8px;
   margin-left: 4px;
@@ -25,6 +19,11 @@ const ButtonWrap = styled.button`
     margin-right: 0px;
   }
 `;
+interface IProps {
+  textToDisplay: string;
+  label: string;
+  onClick?: () => void;
+}
 
 const Button = (props: IProps) => {
   const { textToDisplay, label, onClick } = props;
