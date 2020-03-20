@@ -26,14 +26,9 @@ function Counter() {
       <h2 title="counter">{count}</h2>
       <ButtonsContainer>
         <Button
-          textToDisplay="+3"
-          label="increment by 3"
-          onClick={() => incrementCount(3)}
-        />
-        <Button
-          textToDisplay="+"
-          label="increment"
-          onClick={() => incrementCount(1)}
+          textToDisplay="-3"
+          label="decrement by 3"
+          onClick={() => decrementCount(3)}
         />
         <Button
           textToDisplay="-"
@@ -41,9 +36,14 @@ function Counter() {
           onClick={() => decrementCount(1)}
         />
         <Button
-          textToDisplay="-3"
-          label="decrement by 3"
-          onClick={() => decrementCount(3)}
+          textToDisplay="+"
+          label="increment"
+          onClick={() => incrementCount(1)}
+        />
+        <Button
+          textToDisplay="+3"
+          label="increment by 3"
+          onClick={() => incrementCount(3)}
         />
       </ButtonsContainer>
       <label htmlFor="counter-limit">Counter Limit</label>
