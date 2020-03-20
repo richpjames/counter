@@ -19,10 +19,13 @@ export const ButtonsContainer = styled.section`
 export const UpperBoundContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 10px;
   align-items: center;
+  font-size: 30px;
 `;
 export const UpperBoundInput = styled.input`
-  width: 40px;
+  width: 60px;
+  height: 40px;
+  font-size: 20px;
   margin-top: 7.5px;
 `;
