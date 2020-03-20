@@ -50,6 +50,7 @@ function Counter() {
       <input
         type="number"
         id="counter-limit"
+        value={upperBound}
         onChange={({ target }) => setUpperBound(+target.value)}
       />
     </CounterContainer>
