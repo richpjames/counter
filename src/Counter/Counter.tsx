@@ -3,7 +3,9 @@ import Button from "./Button";
 import {
   CounterContainer,
   ButtonsContainer,
-  UpperBoundInput
+  UpperBoundInput,
+  UpperBoundContainer,
+  Count
 } from "./Counter-styles";
 
 function Counter() {
@@ -28,7 +30,7 @@ function Counter() {
   return (
     <CounterContainer>
       <h1>Counter</h1>
-      <h2 title="counter">{count}</h2>
+      <Count title="counter">{count}</Count>
       <ButtonsContainer>
         <Button
           textToDisplay="-3"
@@ -51,13 +53,15 @@ function Counter() {
           onClick={() => incrementCount(3)}
         />
       </ButtonsContainer>
-      <label htmlFor="counter-limit">Counter Limit</label>
-      <UpperBoundInput
-        type="number"
-        id="counter-limit"
-        value={upperBound}
-        onChange={({ target }) => setUpperBound(+target.value)}
-      />
+      <UpperBoundContainer>
+        <label htmlFor="counter-limit">Counter Limit</label>
+        <UpperBoundInput
+          type="number"
+          id="counter-limit"
+          value={upperBound}
+          onChange={({ target }) => setUpperBound(+target.value)}
+        />
+      </UpperBoundContainer>
     </CounterContainer>
   );
 }
