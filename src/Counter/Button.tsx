@@ -15,6 +15,9 @@ const ButtonWrap = styled.button`
   width: 75px;
   font-size: 30px;
   color: #6fa912;
+  background-color: #fffff0;
+  text-align: center;
+  font-family: "Fredoka One", sans-serif;
   :first-child {
     margin-left: 0px;
   }
