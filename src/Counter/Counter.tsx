@@ -32,26 +32,18 @@ function Counter() {
       <Title>Counter</Title>
       <Count title="counter">{count}</Count>
       <ButtonsContainer>
-        <Button
-          textToDisplay="-3"
-          label="decrement by 3"
-          onClick={() => decrementCount(3)}
-        />
-        <Button
-          textToDisplay="-"
-          label="decrement"
-          onClick={() => decrementCount(1)}
-        />
-        <Button
-          textToDisplay="+"
-          label="increment"
-          onClick={() => incrementCount(1)}
-        />
-        <Button
-          textToDisplay="+3"
-          label="increment by 3"
-          onClick={() => incrementCount(3)}
-        />
+        <Button label="decrement by 3" onClick={() => decrementCount(3)}>
+          -3
+        </Button>
+        <Button label="decrement" onClick={() => decrementCount(1)}>
+          -
+        </Button>
+        <Button label="increment" onClick={() => incrementCount(1)}>
+          +
+        </Button>
+        <Button label="increment by 3" onClick={() => incrementCount(3)}>
+          +3
+        </Button>
       </ButtonsContainer>
       <UpperBound upperBound={upperBound} setUpperBound={setUpperBound} />
     </CounterContainer>
