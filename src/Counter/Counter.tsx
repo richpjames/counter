@@ -5,7 +5,8 @@ import {
   ButtonsContainer,
   UpperBoundInput,
   UpperBoundContainer,
-  Count
+  Count,
+  Title
 } from "./Counter-styles";
 
 function Counter() {
@@ -29,7 +30,7 @@ function Counter() {
   };
   return (
     <CounterContainer>
-      <h1>Counter</h1>
+      <Title>Counter</Title>
       <Count title="counter">{count}</Count>
       <ButtonsContainer>
         <Button
@@ -54,7 +55,7 @@ function Counter() {
         />
       </ButtonsContainer>
       <UpperBoundContainer>
-        <label htmlFor="counter-limit">Counter Limit</label>
+        <label htmlFor="counter-limit">Counter Limit:</label>
         <UpperBoundInput
           type="number"
           id="counter-limit"
