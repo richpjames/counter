@@ -30,11 +30,6 @@ export const Count = styled.h2`
   }
 `;
 
-export const ButtonsContainer = styled.section`
-  display: flex;
-  margin-top: 20px;
-  height: 100px;
-`;
 export const UpperBoundContainer = styled.div`
   display: flex;
   margin-top: 10px;
