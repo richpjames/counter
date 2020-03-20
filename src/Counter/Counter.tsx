@@ -27,21 +27,39 @@ function Counter() {
       setCount(() => 0);
     }
   };
+  const countBottomBound = count <= 0;
+  const countUpperBound = count >= upperBound;
   return (
     <CounterContainer>
       <Title>Counter</Title>
       <Count title="counter">{count}</Count>
       <ButtonsContainer>
-        <Button label="decrement by 3" onClick={() => decrementCount(3)}>
+        <Button
+          label="decrement by 3"
+          onClick={() => decrementCount(3)}
+          disabled={countBottomBound}
+        >
           -3
         </Button>
-        <Button label="decrement" onClick={() => decrementCount(1)}>
+        <Button
+          label="decrement"
+          onClick={() => decrementCount(1)}
+          disabled={countBottomBound}
+        >
           -
         </Button>
-        <Button label="increment" onClick={() => incrementCount(1)}>
+        <Button
+          label="increment"
+          onClick={() => incrementCount(1)}
+          disabled={countUpperBound}
+        >
           +
         </Button>
-        <Button label="increment by 3" onClick={() => incrementCount(3)}>
+        <Button
+          label="increment by 3"
+          onClick={() => incrementCount(3)}
+          disabled={countUpperBound}
+        >
           +3
         </Button>
       </ButtonsContainer>
