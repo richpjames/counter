@@ -1,11 +1,17 @@
 import React from "react";
 import Counter from "./Counter/Counter";
+import styled from "styled-components/macro";
+
+const AppContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 function App() {
   return (
-    <div className="App">
+    <AppContainer>
       <Counter />
-    </div>
+    </AppContainer>
   );
 }
 
