@@ -5,10 +5,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #7fba23;
     font-family: "Open Sans", sans-serif;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    box-shadow: inset 0px 0px 5px 3px rgba(30, 46, 4, 1);
 }
 
 h1,
@@ -18,9 +15,10 @@ h2 {
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 5em;
+    font-family: "Fredoka One", sans-serif;
 }
 
 h2 {
-    font-size: 90px;
+    font-size: 4em;
 }
