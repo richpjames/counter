@@ -20,17 +20,18 @@ const ButtonWrap = styled.button`
   }
 `;
 interface IProps {
-  textToDisplay: string;
   label: string;
   onClick?: () => void;
+  children: string;
+  disabled: boolean;
 }
 
 const Button = (props: IProps) => {
-  const { textToDisplay, label, onClick } = props;
+  const { label, onClick, children, disabled } = props;
 
   return (
-    <ButtonWrap aria-label={label} onClick={onClick}>
-      {textToDisplay}
+    <ButtonWrap aria-label={label} onClick={onClick} disabled={disabled}>
+      {children}
     </ButtonWrap>
   );
 };
