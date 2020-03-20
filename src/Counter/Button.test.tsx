@@ -7,9 +7,24 @@ import Button from "./Button";
 
 test("renders the text passed to it", () => {
   const { getByLabelText } = render(
-    <Button textToDisplay="test text" label="button" />
+    <Button label="button" disabled={false}>
+      test text
+    </Button>
   );
   const button = getByLabelText("button");
 
   expect(button).toHaveTextContent("test text");
+});
+
+test("on click should be called when the button is clicked", () => {
+  const mockFunc = jest.fn();
+
+  const { getByLabelText } = render(
+    <Button label="button" onClick={mockFunc} disabled={false}>
+      Button Test
+    </Button>
+  );
+  expect(mockFunc).not.toHaveBeenCalled();
+  userEvent.click(getByLabelText("button"));
+  expect(mockFunc).toHaveBeenCalled();
 });
