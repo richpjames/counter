@@ -6,17 +6,13 @@ export const CounterContainer = styled.section`
   align-items: center;
   justify-items: center;
   color: #ffffff;
-  @media only screen and (max-width: 600px) {
+
+  @media screen and (orientation: portrait) and (max-width: 600px) {
+    margin-top: 8.5%;
     width: 90%;
   }
-  @media only screen and (min-width: 600px) {
-    width: 50%;
-  }
-  @media screen and (orientation: portrait) {
-    margin-top: 8.5%;
-  }
-  @media screen and (orientation: landscape) {
-    margin-top: 1%;
+  @media screen and (min-width: 600px) and (orientation: landscape) {
+    margin-top: 7.5%;
   }
 `;
 export const Title = styled.h1``;
