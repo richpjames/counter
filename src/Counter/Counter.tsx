@@ -3,11 +3,10 @@ import Button from "./Button";
 import {
   CounterContainer,
   ButtonsContainer,
-  UpperBoundInput,
-  UpperBoundContainer,
   Count,
   Title
 } from "./Counter-styles";
+import UpperBound from "./UpperBound";
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -54,15 +53,7 @@ function Counter() {
           onClick={() => incrementCount(3)}
         />
       </ButtonsContainer>
-      <UpperBoundContainer>
-        <label htmlFor="counter-limit">Counter Limit:</label>
-        <UpperBoundInput
-          type="number"
-          id="counter-limit"
-          value={upperBound}
-          onChange={({ target }) => setUpperBound(+target.value)}
-        />
-      </UpperBoundContainer>
+      <UpperBound upperBound={upperBound} setUpperBound={setUpperBound} />
     </CounterContainer>
   );
 }
