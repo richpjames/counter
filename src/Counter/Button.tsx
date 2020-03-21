@@ -12,6 +12,10 @@ const ButtonWrap = styled.button`
   background-color: #fffff0;
   text-align: center;
   font-family: "Fredoka One", sans-serif;
+
+  :focus {
+    border: 2px solid grey;
+  }
   :first-child {
     margin-left: 0px;
   }

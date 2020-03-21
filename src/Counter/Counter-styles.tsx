@@ -36,6 +36,7 @@ export const UpperBoundContainer = styled.div`
   align-items: center;
   text-align: center;
   font-size: 25px;
+
   @media only screen and (max-width: 600px) {
     flex-direction: column;
     width: 200px;
@@ -53,7 +54,10 @@ export const UpperBoundInput = styled.input`
   margin-left: 7.5px;
   border-radius: 8px;
   color: #6fa912;
-  @media only screen and (max-width: 600px) {
+  :focus {
+    border: 2px solid grey;
+  }
+  :on- @media only screen and (max-width: 600px) {
     margin-top: 5%;
   }
   @media only screen and (min-width: 600px) {
