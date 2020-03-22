@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
 
-import ButtonsContainer from "./Buttons/ButtonsContainer";
+import ButtonsContainer from "./ButtonsContainer";
 import Logo from "./Logo/Logo";
 import UpperBound from "./UpperBound/UpperBound";
 
@@ -15,7 +15,7 @@ const CounterContainer = styled.section`
     margin-top: 15%;
   }
   @media screen and (min-width: 600px) and (orientation: landscape) {
-    margin-top: 7.5%;
+    margin-top: 5%;
   }
 `;
 
