@@ -9,7 +9,7 @@ const CharactersWrap = styled.div`
   font-family: "Fredoka One", sans-serif;
   display: flex;
   line-height: 2em;
-  justify-items: center;
+  justify-content: center;
 `;
 const LogoLetter = styled.h2`
   margin-right: 13.5%;
