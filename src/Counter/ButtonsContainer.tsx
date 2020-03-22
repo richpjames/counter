@@ -5,8 +5,13 @@ import Button from "../Button";
 
 const ButtonsWrap = styled.section`
   display: flex;
-  margin-top: 20px;
   height: 100px;
+  @media only screen and (max-width: 600px) {
+    margin-top: 20px;
+  }
+  @media only screen and (min-width: 600px) {
+    margin-top: 35%;
+  }
 `;
 
 declare type setStateWithCount = (amountChangeBy: number) => void;
