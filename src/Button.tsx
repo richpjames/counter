@@ -9,7 +9,6 @@ const ButtonWrap = styled.button`
   width: 75px;
   font-size: 30px;
   color: #6fa912;
-  background-color: #fffff0;
   text-align: center;
   font-family: "Fredoka One", sans-serif;
   :focus {
@@ -22,6 +21,7 @@ const ButtonWrap = styled.button`
     margin-right: 0px;
   }
 `;
+
 interface IProps {
   label: string;
   onClick?: () => void;
