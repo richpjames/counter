@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled, { keyframes } from "styled-components/macro";
 
 export const CounterContainer = styled.section`
   display: flex;
@@ -17,9 +17,19 @@ export const CounterContainer = styled.section`
 `;
 export const Title = styled.h1``;
 
+const rotate = keyframes`
+  0% {transform: translateY(-60%);}
+  80% {transform: transateY(+30%);}
+  100% {transform: translateY(0);}
+`;
+
 export const Count = styled.h2`
   font-family: "Fredoka One", sans-serif;
   font-weight: 200;
+  animation-name: ${rotate};
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
   @media only screen and (max-width: 600px) {
     margin-top: 15%;
     margin-bottom: 15%;
