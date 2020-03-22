@@ -11,7 +11,7 @@ const AppContainer = styled.div`
   width: 100vw;
   position: absolute;
 `;
-const HelpIcon = styled.nav`
+const HelpIcon = styled.section`
   position: absolute;
   top: 15px;
   left: 15px;
