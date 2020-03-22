@@ -41,7 +41,7 @@ function Counter() {
   const countBottomBound = count <= 0;
   const countUpperBound = count >= upperBound;
   return (
-    <CounterContainer>
+    <CounterContainer title="counter">
       <Logo count={count} />
       <ButtonsContainer
         incrementCount={incrementCount}
