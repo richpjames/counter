@@ -1,14 +1,23 @@
 import React, { useState } from "react";
+import styled from "styled-components/macro";
 
-import ButtonsContainer from "./ButtonsContainer";
-import {
-  CounterContainer,
-  Count,
-  LettersWrap,
-  LogoLetter
-} from "./Counter-styles";
-import UpperBound from "./UpperBound";
-import Smile from "./Smile";
+import ButtonsContainer from "./Buttons/ButtonsContainer";
+import Logo from "./Logo/Logo";
+import UpperBound from "./UpperBound/UpperBound";
+
+const CounterContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  color: #ffffff;
+  @media screen and (orientation: portrait) and (max-width: 600px) {
+    margin-top: 15%;
+  }
+  @media screen and (min-width: 600px) and (orientation: landscape) {
+    margin-top: 7.5%;
+  }
+`;
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -33,12 +42,7 @@ function Counter() {
   const countUpperBound = count >= upperBound;
   return (
     <CounterContainer>
-      {/* <Title>Counter</Title> */}
-      <LettersWrap>
-        <LogoLetter>a</LogoLetter>
-        <Count title="counter">{count}</Count>
-      </LettersWrap>
-      <Smile />
+      <Logo count={count} />
       <ButtonsContainer
         incrementCount={incrementCount}
         decrementCount={decrementCount}
