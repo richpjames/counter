@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components/macro";
 
-const rotate = keyframes`
+const dropDown = keyframes`
   0% {transform: translateY(-40%);}
   100% {transform: translateY(0);}
 `;
@@ -9,7 +9,7 @@ const rotate = keyframes`
 export const CountWrap = styled.h2`
   width: 145px;
   font-size: 300%;
-  animation-name: ${rotate};
+  animation-name: ${dropDown};
   animation-duration: 0.3s;
   animation-timing-function: ease-out;
   animation-iteration-count: 1;
