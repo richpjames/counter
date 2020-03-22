@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+
 import ButtonsContainer from "./ButtonsContainer";
 import { CounterContainer, Count, Title } from "./Counter-styles";
 import UpperBound from "./UpperBound";
+import Smile from "./Smile";
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -26,8 +28,9 @@ function Counter() {
   const countUpperBound = count >= upperBound;
   return (
     <CounterContainer>
-      <Title>Counter</Title>
+      {/* <Title>Counter</Title> */}
       <Count title="counter">{count}</Count>
+      <Smile />
       <ButtonsContainer
         incrementCount={incrementCount}
         decrementCount={decrementCount}

@@ -39,7 +39,6 @@ export const Count = styled.h2`
     margin-bottom: 10%;
   }
 `;
-
 export const UpperBoundContainer = styled.div`
   display: flex;
   margin-top: 10px;
@@ -67,7 +66,7 @@ export const UpperBoundInput = styled.input`
   :focus {
     border: 2px solid grey;
   }
-  :on- @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 600px) {
     margin-top: 5%;
   }
   @media only screen and (min-width: 600px) {
