@@ -1,5 +1,7 @@
 A counter made as demo using TDD, Jest, React Testing Library, Styled Components.
 
+A hosted version is available at [https://richjames.co.uk/counter](www.richjames.co.uk/counter)
+
 Firstly run:
 
 ### `yarn install`
