@@ -47,11 +47,10 @@ interface Props {
   text?: string;
   confirm: () => void;
   confirmText: string;
-  hide: () => void;
 }
 
 function Dialog(props: Props) {
-  const { title, text, confirm, confirmText, hide } = props;
+  const { title, text, confirm, confirmText } = props;
   return (
     <Layer>
       <DialogWrapper>

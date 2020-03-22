@@ -29,7 +29,6 @@ function App() {
       </AppContainer>
       {showHelp && (
         <Dialog
-          hide={hideDialog}
           confirm={hideDialog}
           confirmText="OK"
           title="Info"
