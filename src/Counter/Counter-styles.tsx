@@ -6,26 +6,32 @@ export const CounterContainer = styled.section`
   align-items: center;
   justify-items: center;
   color: #ffffff;
-
   @media screen and (orientation: portrait) and (max-width: 600px) {
-    margin-top: 8.5%;
+    margin-top: 2.5%;
     width: 90%;
   }
   @media screen and (min-width: 600px) and (orientation: landscape) {
-    margin-top: 7.5%;
+    margin-top: 2.5%;
   }
 `;
-export const Title = styled.h1``;
-
+export const LettersWrap = styled.div`
+  font-size: 75px;
+  font-family: "Fredoka One", sans-serif;
+  display: flex;
+  line-height: 2.5em;
+  justify-items: center;
+`;
+export const LogoLetter = styled.h2`
+  margin-right: 13.5%;
+  margin-left: -7%;
+`;
 const rotate = keyframes`
   0% {transform: translateY(-60%);}
   80% {transform: transateY(+30%);}
   100% {transform: translateY(0);}
 `;
-
 export const Count = styled.h2`
-  font-family: "Fredoka One", sans-serif;
-  font-weight: 200;
+  font-size: 300%;
   animation-name: ${rotate};
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -39,13 +45,13 @@ export const Count = styled.h2`
     margin-bottom: 10%;
   }
 `;
+
 export const UpperBoundContainer = styled.div`
   display: flex;
   margin-top: 10px;
   align-items: center;
   text-align: center;
   font-size: 25px;
-
   @media only screen and (max-width: 600px) {
     flex-direction: column;
     width: 200px;

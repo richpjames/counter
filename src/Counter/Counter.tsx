@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 
 import ButtonsContainer from "./ButtonsContainer";
-import { CounterContainer, Count, Title } from "./Counter-styles";
+import {
+  CounterContainer,
+  Count,
+  LettersWrap,
+  LogoLetter
+} from "./Counter-styles";
 import UpperBound from "./UpperBound";
 import Smile from "./Smile";
 
@@ -29,7 +34,10 @@ function Counter() {
   return (
     <CounterContainer>
       {/* <Title>Counter</Title> */}
-      <Count title="counter">{count}</Count>
+      <LettersWrap>
+        <LogoLetter>a</LogoLetter>
+        <Count title="counter">{count}</Count>
+      </LettersWrap>
       <Smile />
       <ButtonsContainer
         incrementCount={incrementCount}
