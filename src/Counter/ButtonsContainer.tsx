@@ -10,7 +10,7 @@ const ButtonsWrap = styled.section`
     margin-top: 20px;
   }
   @media only screen and (min-width: 600px) {
-    margin-top: 35%;
+    margin-top: 20%;
   }
 `;
 

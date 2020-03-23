@@ -15,7 +15,7 @@ const CounterContainer = styled.section`
     margin-top: 15%;
   }
   @media screen and (min-width: 600px) and (orientation: landscape) {
-    margin-top: 2.5%;
+    margin-top: 1.5%;
   }
 `;
 
