@@ -1,18 +1,12 @@
 import React from "react";
-import styled, { keyframes } from "styled-components/macro";
+import styled from "styled-components/macro";
 
-const dropDown = keyframes`
-  0% {transform: translateY(-40%);}
-  100% {transform: translateY(0);}
-`;
+import { letterDropDown } from "../../animation";
 
 export const CountWrap = styled.h2`
   width: 145px;
   font-size: 300%;
-  animation-name: ${dropDown};
-  animation-duration: 0.3s;
-  animation-timing-function: ease-out;
-  animation-iteration-count: 1;
+  animation: ${letterDropDown} 0.3s ease-out 1;
   margin-top: 10%;
   margin-bottom: 10%;
 `;
