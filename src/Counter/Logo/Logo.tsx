@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 
 import Count from "./Count";
 import Smile from "./Smile";
+import { letterDropDown } from "../../animation";
 
 const CharactersWrap = styled.div`
   font-size: 75px;
@@ -14,6 +15,7 @@ const CharactersWrap = styled.div`
 const LogoLetter = styled.h2`
   margin-right: 13.5%;
   margin-left: -7%;
+  animation: ${letterDropDown} 0.3s ease-in-out 1;
 `;
 
 interface IProps {
