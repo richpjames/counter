@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components/macro";
 
+import { smileDropDown } from "../../animation";
+
 const smileSize = 175;
 const blankerSize = smileSize * 0.625;
 
-const SmileWrap = styled.div``;
+const SmileWrap = styled.div`
+  animation: ${smileDropDown} 0.25s ease-in-out 1;
+`;
 
 const CornerCapRow = styled.div`
   display: flex;
